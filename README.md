@@ -1,7 +1,6 @@
-"# robot_test"
-# My First Project interesting
+# My First Project Tester By Robot Framework
 
-![PICTURE](https://giphy.com/embed/WOimknZN9v5UXaJJ22)
+![PICTURE](https://mir-s3-cdn-cf.behance.net/project_modules/hd/5eeea355389655.59822ff824b72.gif)
 
 <a href="https://gitmoji.dev">
   <img
@@ -9,5 +8,9 @@
     alt="Gitmoji"
   />
 </a>
-"# robot_test" 
-"# robot_test" 
+
+# Using gitmoji-cli
+To use gitmojis from your command line install gitmoji-cli. A gitmoji interactive client for using emojis on commit messages.
+``` bash
+#install gitmoji-cli
+$ npm i -g gitmoji-cli

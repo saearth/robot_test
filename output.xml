@@ -1,104 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-13T10:38:48.834340" rpa="false" schemaversion="5">
-<suite id="s1" name="Testsuite" source="D:\project\robot framework\testsuite.robot">
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-13T11:06:11.052154" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Login" source="D:\project\robot framework\Test_Login.robot">
 <test id="s1-t1" name="Valid Login" line="10">
 <kw name="Open Browser To Login Page">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:49.160120" level="INFO">Opening browser 'Chrome' to base url 'https://bmaai.iboc.co'.</msg>
+<msg time="2024-09-13T11:06:11.432782" level="INFO">Opening browser 'Chrome' to base url 'https://bmaai.iboc.co'.</msg>
 <arg>${LOGIN URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-13T10:38:49.159616" elapsed="3.406866"/>
+<status status="PASS" start="2024-09-13T11:06:11.431788" elapsed="3.255336"/>
 </kw>
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:52.724176" level="INFO">Page title is 'Aliza'.</msg>
+<msg time="2024-09-13T11:06:14.714650" level="INFO">Page title is 'Aliza'.</msg>
 <arg>Aliza</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-09-13T10:38:52.566482" elapsed="0.157694"/>
+<status status="PASS" start="2024-09-13T11:06:14.688122" elapsed="0.026528"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:49.158619" elapsed="3.565557"/>
+<status status="PASS" start="2024-09-13T11:06:11.431788" elapsed="3.282862"/>
 </kw>
 <kw name="Check Route To Login Page">
 <kw name="Location Should Be" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:52.851087" level="INFO">Current location is 'https://bmaai.iboc.co/'.</msg>
+<msg time="2024-09-13T11:06:14.985564" level="INFO">Current location is 'https://bmaai.iboc.co/'.</msg>
 <arg>https://bmaai.iboc.co/</arg>
 <doc>Verifies that the current URL is exactly ``url``.</doc>
-<status status="PASS" start="2024-09-13T10:38:52.779582" elapsed="0.071505"/>
+<status status="PASS" start="2024-09-13T11:06:14.747656" elapsed="0.237908"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:52.778073" elapsed="0.073014"/>
+<status status="PASS" start="2024-09-13T11:06:14.746658" elapsed="0.238906"/>
 </kw>
 <kw name="Click a Button">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-13T10:38:52.864601" elapsed="0.077048"/>
+<status status="PASS" start="2024-09-13T11:06:14.988555" elapsed="0.088576"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:52.942645" level="INFO">Clicking element 'xpath=//span[contains(text(),'เข้าสู่ระบบ')]'.</msg>
+<msg time="2024-09-13T11:06:15.078128" level="INFO">Clicking element 'xpath=//span[contains(text(),'เข้าสู่ระบบ')]'.</msg>
 <arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-13T10:38:52.941649" elapsed="0.408001"/>
+<status status="PASS" start="2024-09-13T11:06:15.077131" elapsed="0.421560"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:52.864601" elapsed="0.485049"/>
+<status status="PASS" start="2024-09-13T11:06:14.988555" elapsed="0.511139"/>
 </kw>
 <kw name="Input Username">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=username</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-13T10:38:53.352653" elapsed="0.479026"/>
+<status status="PASS" start="2024-09-13T11:06:15.501248" elapsed="0.604653"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:53.832683" level="INFO">Typing text 'bmaadmin' into text field 'id=username'.</msg>
+<msg time="2024-09-13T11:06:16.106899" level="INFO">Typing text 'bmaadmin' into text field 'id=username'.</msg>
 <arg>id=username</arg>
 <arg>${username}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-13T10:38:53.832683" elapsed="0.163618"/>
+<status status="PASS" start="2024-09-13T11:06:16.106899" elapsed="0.153088"/>
 </kw>
 <arg>bmaadmin</arg>
-<status status="PASS" start="2024-09-13T10:38:53.352653" elapsed="0.643648"/>
+<status status="PASS" start="2024-09-13T11:06:15.501248" elapsed="0.758739"/>
 </kw>
 <kw name="Input Password">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id=password</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-13T10:38:53.997362" elapsed="0.029994"/>
+<status status="PASS" start="2024-09-13T11:06:16.261497" elapsed="0.027526"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:54.028353" level="INFO">Typing text 'P@ssw0rd' into text field 'id=password'.</msg>
+<msg time="2024-09-13T11:06:16.290021" level="INFO">Typing text 'P@ssw0rd' into text field 'id=password'.</msg>
 <arg>id=password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-13T10:38:54.028353" elapsed="0.157987"/>
+<status status="PASS" start="2024-09-13T11:06:16.289023" elapsed="0.178118"/>
 </kw>
 <arg>P@ssw0rd</arg>
-<status status="PASS" start="2024-09-13T10:38:53.997362" elapsed="0.189976"/>
+<status status="PASS" start="2024-09-13T11:06:16.260494" elapsed="0.207644"/>
 </kw>
 <kw name="Submit Credentials">
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:54.188336" level="INFO">Clicking button 'id=kc-login'.</msg>
+<msg time="2024-09-13T11:06:16.468138" level="INFO">Clicking button 'id=kc-login'.</msg>
 <arg>id=kc-login</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-13T10:38:54.188336" elapsed="0.608334"/>
+<status status="PASS" start="2024-09-13T11:06:16.468138" elapsed="0.557217"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:54.187338" elapsed="0.610329"/>
+<status status="PASS" start="2024-09-13T11:06:16.468138" elapsed="0.557217"/>
 </kw>
 <kw name="Welcome Page Should Be Open">
 <kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-09-13T10:38:54.903482" level="INFO">Page title is 'Aliza'.</msg>
+<msg time="2024-09-13T11:06:17.070904" level="INFO">Page title is 'Aliza'.</msg>
 <arg>Aliza</arg>
 <doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-09-13T10:38:54.801191" elapsed="0.102291"/>
+<status status="PASS" start="2024-09-13T11:06:17.033879" elapsed="0.037025"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:54.799662" elapsed="0.104818"/>
+<status status="PASS" start="2024-09-13T11:06:17.033879" elapsed="0.037025"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-13T10:38:54.904480" elapsed="2.869492"/>
+<status status="PASS" start="2024-09-13T11:06:17.070904" elapsed="2.342726"/>
 </kw>
-<status status="PASS" start="2024-09-13T10:38:49.158619" elapsed="8.637357"/>
+<status status="PASS" start="2024-09-13T11:06:11.430525" elapsed="7.983105"/>
 </test>
 <doc>Simple example using SeleniumLibrary.</doc>
-<status status="PASS" start="2024-09-13T10:38:48.836334" elapsed="8.960640"/>
+<status status="PASS" start="2024-09-13T11:06:11.054150" elapsed="8.360478"/>
 </suite>
 <statistics>
 <total>
@@ -107,7 +107,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Testsuite">Testsuite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Login">Test Login</stat>
 </suite>
 </statistics>
 <errors>

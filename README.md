@@ -1,6 +1,6 @@
 # My First Project Tester By Robot Framework
 
-![PICTURE](https://mir-s3-cdn-cf.behance.net/project_modules/hd/5eeea355389655.59822ff824b72.gif)
+<img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/5eeea355389655.59822ff824b72.gif" width="300" height="200">
 
 <a href="https://gitmoji.dev">
   <img

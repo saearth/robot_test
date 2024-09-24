@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-24T13:45:14.285523" rpa="false" schemaversion="5">
+<suite id="s1" name="Email" source="D:\project\robot framework\Test_email\Email.robot">
+<test id="s1-t1" name="Read email from ethereal email" line="9">
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-24T13:45:14.339215" level="INFO">"Connecting to the email server..."</msg>
+<arg>"Connecting to the email server..."</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-24T13:45:14.339215" elapsed="0.000000"/>
+</kw>
+<kw name="Wait For Message">
+<msg time="2024-09-24T13:45:14.340257" level="FAIL">No keyword with name 'Wait For Message' found.</msg>
+<var>@{EMAILS}</var>
+<arg>SUBJECT="This is your ethereal mailbox"</arg>
+<arg>timeout=300</arg>
+<arg>interval=10</arg>
+<status status="FAIL" start="2024-09-24T13:45:14.340257" elapsed="0.000000">No keyword with name 'Wait For Message' found.</status>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"Emails received: ${len(EMAILS)}"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.000000"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<arg>"Subject: ${email}[Subject]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"From: ${email}[From]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"Date: ${email}[Date]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"Delivered-To: ${email}[Delivered-To]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"Received: ${email}[Received]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.341809" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>"Body: ${email}[Body]"</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.341809" elapsed="0.000000"/>
+</kw>
+<var name="${email}"/>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.001552"/>
+</iter>
+<var>${email}</var>
+<value>@{EMAILS}</value>
+<status status="NOT RUN" start="2024-09-24T13:45:14.340257" elapsed="0.001552"/>
+</for>
+<kw name="Log" owner="BuiltIn">
+<arg>"Test completed."</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2024-09-24T13:45:14.341809" elapsed="0.000000"/>
+</kw>
+<doc>ทดสอบรับและส่งเมลล์ SMTP ผ่าน Ethereal Email</doc>
+<status status="FAIL" start="2024-09-24T13:45:14.338214" elapsed="0.004625">No keyword with name 'Wait For Message' found.</status>
+</test>
+<status status="FAIL" start="2024-09-24T13:45:14.287519" elapsed="0.057800"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Email">Email</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-24T13:45:14.333604" level="ERROR">Error in file 'D:\project\robot framework\Test_email\Email.robot' on line 2: Importing library 'RPA.Email.ImapSmtp' failed: ModuleNotFoundError: No module named 'RPA'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  D:\project\robot framework\.venv\Scripts\robot.exe
+  C:\Python\Python312\python312.zip
+  C:\Python\Python312\DLLs
+  C:\Python\Python312\Lib
+  C:\Python\Python312
+  D:\project\robot framework\.venv
+  D:\project\robot framework\.venv\Lib\site-packages</msg>
+</errors>
+</robot>

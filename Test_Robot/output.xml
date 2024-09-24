@@ -1,179 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-24T10:15:47.871517" rpa="false" schemaversion="5">
-<suite id="s1" name="E2E Bma" source="D:\project\robot framework\Test_Robot\e2e_bma.robot">
-<test id="s1-t1" name="Test Login" line="11">
-<kw name="Open Browser To Login Page">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:48.322431" level="INFO">Opening browser 'Chrome' to base url 'https://bmaai.iboc.co'.</msg>
-<arg>${LOGIN URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-24T10:15:48.322431" elapsed="5.236887"/>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-24T14:40:22.203349" rpa="false" schemaversion="5">
+<suite id="s1" name="TextfileTest" source="D:\project\robot framework\Test_Robot\TextfileTest.robot">
+<test id="s1-t1" name="Write Content to Text File" line="6">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.258484" level="INFO">${file_path} = file1.txt</msg>
+<var>${file_path}</var>
+<arg>file1.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.258484" elapsed="0.000000"/>
 </kw>
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:53.575704" level="INFO">Page title is 'Aliza'.</msg>
-<arg>Aliza</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-09-24T10:15:53.560696" elapsed="0.015008"/>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.259420" level="INFO">${content} = This is content to be written to the file.</msg>
+<var>${content}</var>
+<arg>This is content to be written to the file.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.259420" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-09-24T10:15:48.322431" elapsed="5.253273"/>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2024-09-24T14:40:22.259872" level="INFO" html="true">Created file '&lt;a href="file://D:\project\robot framework\Test_Robot\file1.txt"&gt;D:\project\robot framework\Test_Robot\file1.txt&lt;/a&gt;'.</msg>
+<arg>${file_path}</arg>
+<arg>${content}</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.259872" elapsed="0.000000"/>
 </kw>
-<kw name="Click a Button">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:53.575704" elapsed="0.303893"/>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-09-24T14:40:22.260875" level="INFO" html="true">Getting file '&lt;a href="file://D:\project\robot framework\Test_Robot\file1.txt"&gt;D:\project\robot framework\Test_Robot\file1.txt&lt;/a&gt;'.</msg>
+<msg time="2024-09-24T14:40:22.267883" level="INFO">${written_content} = This is content to be written to the file.</msg>
+<var>${written_content}</var>
+<arg>${file_path}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.260875" elapsed="0.007008"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:53.879597" level="INFO">Clicking element 'xpath=//span[contains(text(),'เข้าสู่ระบบ')]'.</msg>
-<arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:53.879597" elapsed="0.469348"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.268399" level="INFO">This is content to be written to the file.</msg>
+<arg>${written_content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.268399" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-09-24T10:15:53.575704" elapsed="0.773241"/>
-</kw>
-<kw name="Login to Web page By Username Password" owner="Login">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=username</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:54.353046" elapsed="0.282126"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:54.635172" level="INFO">Typing text 'bmaadmin' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:54.635172" elapsed="0.156212"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=password</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:54.791384" elapsed="0.015622"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:54.807006" level="INFO">Typing text 'P@ssw0rd123' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:54.807006" elapsed="0.140595"/>
-</kw>
-<arg>bmaadmin</arg>
-<arg>P@ssw0rd123</arg>
-<status status="PASS" start="2024-09-24T10:15:54.352933" elapsed="0.594668"/>
-</kw>
-<kw name="Submit Button">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:54.963219" level="INFO">Clicking button 'id=kc-login'.</msg>
-<arg>id=kc-login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:54.963219" elapsed="0.292153"/>
-</kw>
-<status status="PASS" start="2024-09-24T10:15:54.963219" elapsed="0.292153"/>
-</kw>
-<kw name="Check Label Text">
-<kw name="Page Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:55.356268" level="INFO">Current page contains text 'Invalid username or password. (this message was overwrite in the theme)'.</msg>
-<arg>Invalid username or password. (this message was overwrite in the theme)</arg>
-<doc>Verifies that current page contains ``text``.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.255372" elapsed="0.100896"/>
-</kw>
-<status status="PASS" start="2024-09-24T10:15:55.255372" elapsed="0.100896"/>
-</kw>
-<kw name="Login to Web page By Username Password" owner="Login">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=username</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.357266" elapsed="0.016646"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:55.373912" level="INFO">Typing text 'bmaadmin' into text field 'id=username'.</msg>
-<arg>id=username</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.373912" elapsed="0.193989"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=password</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.567901" elapsed="0.031240"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:55.599141" level="INFO">Typing text 'P@ssw0rd' into text field 'id=password'.</msg>
-<arg>id=password</arg>
-<arg>${password}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.599141" elapsed="0.155850"/>
-</kw>
-<arg>bmaadmin</arg>
-<arg>P@ssw0rd</arg>
-<status status="PASS" start="2024-09-24T10:15:55.357266" elapsed="0.398723"/>
-</kw>
-<kw name="Submit Button">
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:55.756364" level="INFO">Clicking button 'id=kc-login'.</msg>
-<arg>id=kc-login</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:55.756364" elapsed="0.321994"/>
-</kw>
-<status status="PASS" start="2024-09-24T10:15:55.756364" elapsed="0.322996"/>
-</kw>
-<kw name="Welcome Page Should Be Open">
-<kw name="Title Should Be" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:56.233924" level="INFO">Page title is 'Aliza'.</msg>
-<arg>Aliza</arg>
-<doc>Verifies that the current page title equals ``title``.</doc>
-<status status="PASS" start="2024-09-24T10:15:56.080357" elapsed="0.153567"/>
-</kw>
-<status status="PASS" start="2024-09-24T10:15:56.079360" elapsed="0.154564"/>
-</kw>
-<kw name="Check Notifications Web console">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//span[@class='iconify i-heroicons:bell w-5 h-5']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:56.233924" elapsed="1.754560"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:57.989515" level="INFO">Clicking element 'xpath=//span[@class='iconify i-heroicons:bell w-5 h-5']'.</msg>
-<arg>xpath=//span[@class='iconify i-heroicons:bell w-5 h-5']</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-24T10:15:57.988484" elapsed="0.053614"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>xpath=//div[@class='relative inline-flex text-left rtl:text-right top-dropdown']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-24T10:15:58.042098" elapsed="0.038425"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-24T10:15:58.080523" level="INFO">Clicking element 'xpath=//li[1]//div[2]//button[1]'.</msg>
-<msg time="2024-09-24T10:15:58.190533" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-5.png"&gt;&lt;img src="selenium-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2024-09-24T10:15:58.190533" level="FAIL">Element with locator 'xpath=//li[1]//div[2]//button[1]' not found.</msg>
-<arg>xpath=//li[1]//div[2]//button[1]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="FAIL" start="2024-09-24T10:15:58.080523" elapsed="0.225550">Element with locator 'xpath=//li[1]//div[2]//button[1]' not found.</status>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<arg>xpath=//li[1]//div[2]//button[2]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" start="2024-09-24T10:15:58.306073" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-09-24T10:15:56.233924" elapsed="2.072149">Element with locator 'xpath=//li[1]//div[2]//button[1]' not found.</status>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2024-09-24T10:15:58.321695" elapsed="0.000000"/>
-</kw>
-<status status="FAIL" start="2024-09-24T10:15:48.322431" elapsed="10.000398">Element with locator 'xpath=//li[1]//div[2]//button[1]' not found.</status>
+<doc>Writes content to a text file</doc>
+<tag>file_operations</tag>
+<status status="PASS" start="2024-09-24T14:40:22.257975" elapsed="0.010917"/>
 </test>
-<status status="FAIL" start="2024-09-24T10:15:47.871517" elapsed="10.451312"/>
+<test id="s1-t2" name="Append content to Text File" line="16">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.269893" level="INFO">${file_path} = file2.txt</msg>
+<var>${file_path}</var>
+<arg>file2.txt</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.269893" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.269893" level="INFO">${content_to_append} = This is content to be appended to the file.</msg>
+<var>${content_to_append}</var>
+<arg>This is content to be appended to the file.</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.269893" elapsed="0.000000"/>
+</kw>
+<kw name="Append To File" owner="OperatingSystem">
+<msg time="2024-09-24T14:40:22.271777" level="INFO" html="true">Appended to file '&lt;a href="file://D:\project\robot framework\Test_Robot\file2.txt"&gt;D:\project\robot framework\Test_Robot\file2.txt&lt;/a&gt;'.</msg>
+<arg>${file_path}</arg>
+<arg>${content_to_append}</arg>
+<doc>Appends the given content to the specified file.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.270890" elapsed="0.000887"/>
+</kw>
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2024-09-24T14:40:22.272778" level="INFO" html="true">Getting file '&lt;a href="file://D:\project\robot framework\Test_Robot\file2.txt"&gt;D:\project\robot framework\Test_Robot\file2.txt&lt;/a&gt;'.</msg>
+<msg time="2024-09-24T14:40:22.279213" level="INFO">${appended_content} = This is content to be appended to the file.</msg>
+<var>${appended_content}</var>
+<arg>${file_path}</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.271777" elapsed="0.007436"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-09-24T14:40:22.279575" level="INFO">This is content to be appended to the file.</msg>
+<arg>${appended_content}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-09-24T14:40:22.279575" elapsed="0.000000"/>
+</kw>
+<doc>Appends content to a text file</doc>
+<tag>file_operations</tag>
+<status status="PASS" start="2024-09-24T14:40:22.268892" elapsed="0.011185"/>
+</test>
+<status status="PASS" start="2024-09-24T14:40:22.204468" elapsed="0.076305"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
+<stat pass="2" fail="0" skip="0">file_operations</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="E2E Bma">E2E Bma</stat>
+<stat pass="2" fail="0" skip="0" id="s1" name="TextfileTest">TextfileTest</stat>
 </suite>
 </statistics>
 <errors>

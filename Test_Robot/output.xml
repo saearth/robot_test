@@ -1,97 +1,245 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-24T14:40:22.203349" rpa="false" schemaversion="5">
-<suite id="s1" name="TextfileTest" source="D:\project\robot framework\Test_Robot\TextfileTest.robot">
-<test id="s1-t1" name="Write Content to Text File" line="6">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.258484" level="INFO">${file_path} = file1.txt</msg>
-<var>${file_path}</var>
-<arg>file1.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.258484" elapsed="0.000000"/>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-09-30T11:22:34.291773" rpa="false" schemaversion="5">
+<suite id="s1" name="Add Horn" source="D:\project\robot framework\Test_Robot\add_horn.robot">
+<test id="s1-t1" name="Add horn to Camera" line="11">
+<kw name="Open Browser To Login Page">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:34.617946" level="INFO">Opening browser 'Chrome' to base url 'https://bmaai.iboc.co'.</msg>
+<arg>${LOGIN URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-30T11:22:34.617946" elapsed="3.137478"/>
 </kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.259420" level="INFO">${content} = This is content to be written to the file.</msg>
-<var>${content}</var>
-<arg>This is content to be written to the file.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.259420" elapsed="0.000000"/>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:37.771381" level="INFO">Page title is 'Aliza'.</msg>
+<arg>Aliza</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-30T11:22:37.755424" elapsed="0.016955"/>
 </kw>
-<kw name="Create File" owner="OperatingSystem">
-<msg time="2024-09-24T14:40:22.259872" level="INFO" html="true">Created file '&lt;a href="file://D:\project\robot framework\Test_Robot\file1.txt"&gt;D:\project\robot framework\Test_Robot\file1.txt&lt;/a&gt;'.</msg>
-<arg>${file_path}</arg>
-<arg>${content}</arg>
-<doc>Creates a file with the given content and encoding.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.259872" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-30T11:22:34.616948" elapsed="3.155431"/>
 </kw>
-<kw name="Get File" owner="OperatingSystem">
-<msg time="2024-09-24T14:40:22.260875" level="INFO" html="true">Getting file '&lt;a href="file://D:\project\robot framework\Test_Robot\file1.txt"&gt;D:\project\robot framework\Test_Robot\file1.txt&lt;/a&gt;'.</msg>
-<msg time="2024-09-24T14:40:22.267883" level="INFO">${written_content} = This is content to be written to the file.</msg>
-<var>${written_content}</var>
-<arg>${file_path}</arg>
-<doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.260875" elapsed="0.007008"/>
+<kw name="Click a Button To Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:37.773376" elapsed="0.208442"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.268399" level="INFO">This is content to be written to the file.</msg>
-<arg>${written_content}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.268399" elapsed="0.000000"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:37.982816" level="INFO">Clicking element 'xpath=//span[contains(text(),'เข้าสู่ระบบ')]'.</msg>
+<arg>xpath=//span[contains(text(),'เข้าสู่ระบบ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:37.981818" elapsed="0.567483"/>
 </kw>
-<doc>Writes content to a text file</doc>
-<tag>file_operations</tag>
-<status status="PASS" start="2024-09-24T14:40:22.257975" elapsed="0.010917"/>
+<status status="PASS" start="2024-09-30T11:22:37.773376" elapsed="0.775925"/>
+</kw>
+<kw name="Login to Web page By Username Password" owner="Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=username</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:38.554287" elapsed="0.734585"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:39.289879" level="INFO">Typing text 'bmaadmin' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:39.288872" elapsed="0.198471"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=password</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:39.487343" elapsed="0.029918"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:39.519256" level="INFO">Typing text 'AITEAM@dmin' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:39.518260" elapsed="0.230384"/>
+</kw>
+<arg>bmaadmin</arg>
+<arg>AITEAM@dmin</arg>
+<status status="PASS" start="2024-09-30T11:22:38.553290" elapsed="1.196351"/>
+</kw>
+<kw name="Submit Button To Login">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:39.750637" level="INFO">Clicking button 'id=kc-login'.</msg>
+<arg>id=kc-login</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:39.750637" elapsed="0.581444"/>
+</kw>
+<status status="PASS" start="2024-09-30T11:22:39.749641" elapsed="0.582440"/>
+</kw>
+<kw name="Welcome Page Should Be Open">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:40.557485" level="INFO">Page title is 'Aliza'.</msg>
+<arg>Aliza</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-09-30T11:22:40.344050" elapsed="0.213435"/>
+</kw>
+<status status="PASS" start="2024-09-30T11:22:40.344050" elapsed="0.213435"/>
+</kw>
+<kw name="Go to Setting Camera">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//button[@class='group relative flex items-center gap-1.5 px-2.5 py-1.5 w-full rounded-md font-medium text-sm focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-primary-500 dark:focus-visible:before:ring-primary-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:40.576429" elapsed="1.744497"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:42.320926" level="INFO">Clicking element 'xpath=//button[@class='group relative flex items-center gap-1.5 px-2.5 py-1.5 w-full rounded-md font-medium text-sm focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-primary-500 dark:focus-visible:before:ring-primary-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50']'.</msg>
+<arg>xpath=//button[@class='group relative flex items-center gap-1.5 px-2.5 py-1.5 w-full rounded-md font-medium text-sm focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 focus-visible:before:ring-primary-500 dark:focus-visible:before:ring-primary-400 before:absolute before:inset-px before:rounded-md disabled:cursor-not-allowed disabled:opacity-75 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:before:bg-gray-50 dark:hover:before:bg-gray-800/50']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:42.320926" elapsed="0.122673"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="__nuxt"]/div/div[2]/div[1]/div[1]/div/div[2]/ul/li[7]/div/ul/li[1]/div/div/div/a</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:42.444596" elapsed="0.042884"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:42.487480" level="INFO">Clicking element 'xpath=//*[@id="__nuxt"]/div/div[2]/div[1]/div[1]/div/div[2]/ul/li[7]/div/ul/li[1]/div/div/div/a'.</msg>
+<arg>xpath=//*[@id="__nuxt"]/div/div[2]/div[1]/div[1]/div/div[2]/ul/li[7]/div/ul/li[1]/div/div/div/a</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:42.487480" elapsed="0.236367"/>
+</kw>
+<status status="PASS" start="2024-09-30T11:22:40.575430" elapsed="2.148417"/>
+</kw>
+<kw name="Find Camera And Choese Camera">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="__nuxt"]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/input</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:42.724845" elapsed="0.127659"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:42.853502" level="INFO">Clicking element 'xpath=//*[@id="__nuxt"]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/input'.</msg>
+<arg>xpath=//*[@id="__nuxt"]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/input</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:42.852504" elapsed="0.188495"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:43.045985" level="INFO">Typing text 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์' into text field 'xpath=//*[@id="__nuxt"]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/input'.</msg>
+<arg>xpath=//*[@id="__nuxt"]/div/div[2]/div[2]/div/div[1]/div/div[2]/div/input</arg>
+<arg>CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:43.041997" elapsed="0.322138"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-30T11:22:43.364135" elapsed="1.293853"/>
+</kw>
+<status status="PASS" start="2024-09-30T11:22:42.724845" elapsed="1.933143"/>
+</kw>
+<kw name="Go to Edit Camera">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//span[@class='iconify i-heroicons:ellipsis-horizontal-20-solid flex-shrink-0 h-5 w-5']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:44.659984" elapsed="0.022938"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:44.683920" level="INFO">Clicking element 'xpath=//span[@class='iconify i-heroicons:ellipsis-horizontal-20-solid flex-shrink-0 h-5 w-5']'.</msg>
+<arg>xpath=//span[@class='iconify i-heroicons:ellipsis-horizontal-20-solid flex-shrink-0 h-5 w-5']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:44.682922" elapsed="0.176527"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=[id^="headlessui-menu-item-v-1"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:44.859449" elapsed="0.049867"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:44.910315" level="INFO">Clicking element 'css=[id^="headlessui-menu-item-v-1"]'.</msg>
+<arg>css=[id^="headlessui-menu-item-v-1"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:44.909316" elapsed="0.210438"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//select[@id='style-selector-brand']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:45.120751" elapsed="0.280250"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:45.401998" level="INFO">Clicking element 'xpath=//select[@id='style-selector-brand']'.</msg>
+<arg>xpath=//select[@id='style-selector-brand']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:45.401998" elapsed="0.177543"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:45.580521" level="INFO">Selecting options from selection list 'xpath=//select[@id='style-selector-brand']' by label CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์.</msg>
+<arg>xpath=//select[@id='style-selector-brand']</arg>
+<arg>CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-09-30T11:22:45.580521" elapsed="0.411897"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:45.993415" level="INFO">Clicking element 'xpath=//span[normalize-space()='Save']'.</msg>
+<arg>xpath=//span[normalize-space()='Save']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:45.993415" elapsed="0.262304"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-09-30T11:22:46.256712" elapsed="0.048868"/>
+</kw>
+<status status="PASS" start="2024-09-30T11:22:44.658985" elapsed="1.646595"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-09-30T11:22:51.306929" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-09-30T11:22:46.305580" elapsed="5.001349"/>
+</kw>
+<kw name="Check Horn in Camera">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="headlessui-menu-button-v-1-7"]/button/span</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:51.308163" elapsed="0.077792"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:51.385955" level="INFO">Clicking element 'xpath=//*[@id="headlessui-menu-button-v-1-7"]/button/span'.</msg>
+<arg>xpath=//*[@id="headlessui-menu-button-v-1-7"]/button/span</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:51.385955" elapsed="0.065178"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css=[id^="headlessui-menu-item-v-1"]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-30T11:22:51.452130" elapsed="0.234890"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:51.687020" level="INFO">Clicking element 'css=[id^="headlessui-menu-item-v-1"]'.</msg>
+<arg>css=[id^="headlessui-menu-item-v-1"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-30T11:22:51.687020" elapsed="0.396012"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-09-30T11:22:52.083032" level="INFO">Verifying element '//select[@id='style-selector-brand']' contains exact text 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์'.</msg>
+<msg time="2024-09-30T11:22:52.467003" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-35.png"&gt;&lt;img src="selenium-screenshot-35.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-30T11:22:52.468002" level="FAIL">The text of element '//select[@id='style-selector-brand']' should have been 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์' but it was ''.</msg>
+<arg>//select[@id='style-selector-brand']</arg>
+<arg>CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="FAIL" start="2024-09-30T11:22:52.083032" elapsed="0.391951">The text of element '//select[@id='style-selector-brand']' should have been 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์' but it was ''.</status>
+</kw>
+<status status="FAIL" start="2024-09-30T11:22:51.306929" elapsed="1.168054">The text of element '//select[@id='style-selector-brand']' should have been 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์' but it was ''.</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-09-30T11:22:52.481964" elapsed="0.000997"/>
+</kw>
+<status status="FAIL" start="2024-09-30T11:22:34.615991" elapsed="17.866970">The text of element '//select[@id='style-selector-brand']' should have been 'CM3-PW-070 ปากซอยศรีนครินทร์ 42 ถนนศรีนครินทร์' but it was ''.</status>
 </test>
-<test id="s1-t2" name="Append content to Text File" line="16">
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.269893" level="INFO">${file_path} = file2.txt</msg>
-<var>${file_path}</var>
-<arg>file2.txt</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.269893" elapsed="0.000000"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.269893" level="INFO">${content_to_append} = This is content to be appended to the file.</msg>
-<var>${content_to_append}</var>
-<arg>This is content to be appended to the file.</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.269893" elapsed="0.000000"/>
-</kw>
-<kw name="Append To File" owner="OperatingSystem">
-<msg time="2024-09-24T14:40:22.271777" level="INFO" html="true">Appended to file '&lt;a href="file://D:\project\robot framework\Test_Robot\file2.txt"&gt;D:\project\robot framework\Test_Robot\file2.txt&lt;/a&gt;'.</msg>
-<arg>${file_path}</arg>
-<arg>${content_to_append}</arg>
-<doc>Appends the given content to the specified file.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.270890" elapsed="0.000887"/>
-</kw>
-<kw name="Get File" owner="OperatingSystem">
-<msg time="2024-09-24T14:40:22.272778" level="INFO" html="true">Getting file '&lt;a href="file://D:\project\robot framework\Test_Robot\file2.txt"&gt;D:\project\robot framework\Test_Robot\file2.txt&lt;/a&gt;'.</msg>
-<msg time="2024-09-24T14:40:22.279213" level="INFO">${appended_content} = This is content to be appended to the file.</msg>
-<var>${appended_content}</var>
-<arg>${file_path}</arg>
-<doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.271777" elapsed="0.007436"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-09-24T14:40:22.279575" level="INFO">This is content to be appended to the file.</msg>
-<arg>${appended_content}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-09-24T14:40:22.279575" elapsed="0.000000"/>
-</kw>
-<doc>Appends content to a text file</doc>
-<tag>file_operations</tag>
-<status status="PASS" start="2024-09-24T14:40:22.268892" elapsed="0.011185"/>
-</test>
-<status status="PASS" start="2024-09-24T14:40:22.204468" elapsed="0.076305"/>
+<status status="FAIL" start="2024-09-30T11:22:34.293762" elapsed="18.201168"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">file_operations</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="TextfileTest">TextfileTest</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Add Horn">Add Horn</stat>
 </suite>
 </statistics>
 <errors>

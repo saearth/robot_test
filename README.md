@@ -11,6 +11,11 @@
 
 # Using gitmoji-cli
 To use gitmojis from your command line install gitmoji-cli. A gitmoji interactive client for using emojis on commit messages.
+
 ``` bash
 #install gitmoji-cli
 $ npm i -g gitmoji-cli
+
+``` bash
+#run robot framework, You have to run the path.
+$ robot filename.robot

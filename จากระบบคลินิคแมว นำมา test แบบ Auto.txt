@@ -1,0 +1,35 @@
+จากระบบคลินิคแมว นำมา test แบบ Automate โดย Step คือ 
+ขั้นตอนการทำ Automate Test บน CI/CD
+กำหนดขอบเขตการทดสอบ:
+
+ประเภทของการทดสอบ: กำหนดให้ชัดเจนว่าจะทำการทดสอบประเภทใด เช่น Unit Test, Integration Test, End-to-End Test
+ขอบเขตของการทดสอบ: กำหนดขอบเขตของฟังก์ชันหรือส่วนประกอบที่ต้องการทดสอบ
+ตัวชี้วัดความสำเร็จ: กำหนดตัวชี้วัดที่ใช้ประเมินผลการทดสอบ เช่น Coverage, Pass/Fail rate
+เลือกเครื่องมือ:
+
+Framework สำหรับการทดสอบ: เลือก Framework ที่เหมาะสมกับภาษาโปรแกรมและเทคโนโลยีที่ใช้ เช่น Jest, Selenium, pytest
+CI/CD Pipeline: เลือกเครื่องมือ CI/CD ที่เหมาะสม เช่น Jenkins, GitLab CI/CD, CircleCI
+เครื่องมืออื่นๆ: อาจมีเครื่องมืออื่นๆ ที่เกี่ยวข้อง เช่น Docker สำหรับสร้าง environment สำหรับการทดสอบ
+เขียน Test Cases:
+
+ออกแบบ Test Cases: ออกแบบ Test Cases ให้ครอบคลุมทุกกรณีที่ต้องการทดสอบ
+เขียนโค้ด Test Cases: เขียนโค้ด Test Cases โดยใช้ Framework ที่เลือก
+จัดระเบียบ Test Cases: จัดระเบียบ Test Cases ให้เป็นหมวดหมู่เพื่อความสะดวกในการจัดการ
+สร้าง CI/CD Pipeline:
+
+กำหนดขั้นตอน: กำหนดขั้นตอนต่างๆ ใน Pipeline เช่น Build, Test, Deploy
+เชื่อมต่อกับ Source Code Repository: เชื่อมต่อ Pipeline กับ Repository เช่น GitHub, GitLab
+กำหนด Trigger: กำหนด Trigger ที่จะเริ่มต้นการทำงานของ Pipeline เช่น เมื่อมีการ push code หรือ merge code
+ตั้งค่า Environment สำหรับการทดสอบ:
+
+เตรียม Environment: เตรียม Environment สำหรับการทดสอบให้เหมือนกับ Production Environment
+จัดการ Dependency: ติดตั้ง Dependency ที่จำเป็นสำหรับการทดสอบ
+รัน Test Cases บน CI/CD:
+
+Trigger Pipeline: Trigger Pipeline เพื่อเริ่มต้นการรัน Test Cases
+ตรวจสอบผลลัพธ์: ตรวจสอบผลลัพธ์ของการทดสอบ และแก้ไขปัญหาหากพบข้อผิดพลาด
+ติดตามและปรับปรุง:
+
+วิเคราะห์ผลลัพธ์: วิเคราะห์ผลลัพธ์ของการทดสอบอย่างสม่ำเสมอ
+ปรับปรุง Test Cases: ปรับปรุง Test Cases ให้ครอบคลุมมากขึ้น
+ปรับปรุง CI/CD Pipeline: ปรับปรุง CI/CD Pipeline ให้มีประสิทธิภาพมากขึ้น

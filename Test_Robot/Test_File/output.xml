@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.4 on win32)" generated="2024-10-07T17:04:40.318031" rpa="false" schemaversion="5">
+<suite id="s1" name="Create file" source="D:\project\robot framework\Test_Robot\Test_File\Create_file.robot">
+<test id="s1-t1" name="Example" line="6">
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2024-10-07T17:04:40.393193" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Acer\AppData\Local\Temp\empty.txt"&gt;C:\Users\Acer\AppData\Local\Temp\empty.txt&lt;/a&gt;'.</msg>
+<arg>${TEMPDIR}/empty.txt</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2024-10-07T17:04:40.392197" elapsed="0.000996"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2024-10-07T17:04:40.395188" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Acer\AppData\Local\Temp\utf-8.txt"&gt;C:\Users\Acer\AppData\Local\Temp\utf-8.txt&lt;/a&gt;'.</msg>
+<arg>${TEMPDIR}/utf-8.txt</arg>
+<arg>Hyvä esimerkki</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2024-10-07T17:04:40.394192" elapsed="0.000996"/>
+</kw>
+<kw name="Create File" owner="OperatingSystem">
+<msg time="2024-10-07T17:04:40.520479" level="INFO" html="true">Created file '&lt;a href="file://C:\Users\Acer\AppData\Local\Temp\iso-8859-1.txt"&gt;C:\Users\Acer\AppData\Local\Temp\iso-8859-1.txt&lt;/a&gt;'.</msg>
+<arg>${TEMPDIR}/iso-8859-1.txt</arg>
+<arg>Hyvä esimerkki</arg>
+<arg>ISO-8859-1</arg>
+<doc>Creates a file with the given content and encoding.</doc>
+<status status="PASS" start="2024-10-07T17:04:40.395188" elapsed="0.125291"/>
+</kw>
+<status status="PASS" start="2024-10-07T17:04:40.391199" elapsed="0.130281"/>
+</test>
+<doc>ตัวอย่างการสร้างไฟล์</doc>
+<status status="PASS" start="2024-10-07T17:04:40.321027" elapsed="0.202819"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Create file">Create file</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
